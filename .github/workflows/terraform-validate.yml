@@ -10,4 +10,4 @@ jobs:
       - name: terraform validate
         uses: dflook/terraform-validate@v1
         with:
-          path: final_exam/terraform/vpc.tf
+          path: ./final_exam/terraform/vpc.tf
