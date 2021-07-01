@@ -1,10 +1,20 @@
-name: Terraform-validate
-on: [push]
+---
+on:
+  - push
+
 jobs:
-  validate:
-    runs-on: ubuntu-latest
-    name: Test or run Terraform code
+  build:
+    runs-on: ubuntu-20.04
     steps:
-      - uses: robertdebock/terraform-action@1.1.1
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: terraform
+        uses: robertdebock/terraform-action@1.1.1
         with:
+          action: init
+          directory: ./final_exam/terraform
+      - name: terraform
+        uses: robertdebock/terraform-action@1.1.1
+        with:
+          action: validate
           directory: ./final_exam/terraform
