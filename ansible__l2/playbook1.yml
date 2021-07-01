@@ -1,0 +1,8 @@
+---
+- name: Enable nginx service
+  hosts: webserver
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx-extras
+        update_cache: yes
