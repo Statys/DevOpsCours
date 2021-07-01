@@ -1,0 +1,4 @@
+[serv1]
+serv1 ansible_host=localhost ansible_user=us ansible_port=2222 ansible_password=1
+[serv2]
+serv2 ansible_host=localhost ansible_user=us ansible_port=3333 ansible_password=1

@@ -1,0 +1,78 @@
+---
+- name: Install nginx with phrase
+  hosts: serv1
+  tasks:
+    - name: Install nginx
+      apk:
+        name: nginx
+        state: present
+      become: true
+    - name: Create www folder
+      file: path=/www state=directory
+      become: true
+    - name: Create a file index.html
+      copy:
+        content: DevOps Course 2021 Machine 1
+        dest: /www/index.html
+      become: true
+    - name: Copy nginx config
+      copy:
+        src: ../config/nginx.config
+        dest: /etc/nginx/http.d/default.conf 
+      become: true
+    - name: Change file permission
+      file:
+        path: /run/nginx/
+        owner: nginx
+        group: nginx
+        mode: 775
+      become: true
+    - name: Run openrc
+      ansible.builtin.shell:
+        cmd: openrc
+        chdir: /
+      become: true
+    - name: Start service nginx
+      service:
+        name: nginx
+        state: started
+      become: true
+
+- name: Install nginx with phrase
+  hosts: serv2
+  tasks:
+    - name: Install nginx
+      apk:
+        name: nginx
+        state: present
+      become: true
+    - name: Create www folder
+      file: path=/www state=directory
+      become: true
+    - name: Create a file index.html
+      copy:
+        content: DevOps Course 2021 Machine 2
+        dest: /www/index.html
+      become: true
+    - name: Copy nginx config
+      copy:
+        src: ../config/nginx.config
+        dest: /etc/nginx/http.d/default.conf 
+      become: true
+    - name: Change file permission
+      file:
+        path: /run/nginx/
+        owner: nginx
+        group: nginx
+        mode: 775
+      become: true
+    - name: Run openrc
+      ansible.builtin.shell:
+        cmd: openrc
+        chdir: /
+      become: true
+    - name: Start service nginx
+      service:
+        name: nginx
+        state: started
+      become: true
