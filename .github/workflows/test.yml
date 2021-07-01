@@ -1,7 +1,10 @@
-- name: Test or run Terraform code
-  # You may pin to the exact commit or the version.
-  # uses: robertdebock/terraform-action@0f23eadaf70664bdb74551cd8c5ffcfafe43a54d
-  uses: robertdebock/terraform-action@1.1.1
-  with:
-    # The command to run.
-    directory: "./final_exam/terraform/vpc.tf"
+name: Terraform-validate
+on: [push]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: Test or run Terraform code
+    steps:
+      - uses: robertdebock/terraform-action@1.1.1
+        with:
+          directory: "./final_exam/terraform/vpc.tf"
