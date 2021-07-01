@@ -1,4 +1,4 @@
-Terraform-validate:
+name: Terraform-validate:
 on: [push]
 jobs:
   validate:
