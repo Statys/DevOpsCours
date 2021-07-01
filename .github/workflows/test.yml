@@ -8,12 +8,12 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: terraform
-        uses: robertdebock/terraform-action@1.1.1
-        with:
-          action: init
-          directory: ./final_exam/terraform
-      - name: terraform
+      #- name: terraform init
+      #  uses: robertdebock/terraform-action@1.1.1
+      #  with:
+      #    action: init
+      #    directory: ./final_exam/terraform
+      - name: terraform validate
         uses: robertdebock/terraform-action@1.1.1
         with:
           action: validate
