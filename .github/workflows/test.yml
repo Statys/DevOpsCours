@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: robertdebock/terraform-action@1.1.1
         with:
-          directory: "./final_exam/terraform"
+          directory: ./final_exam/terraform
