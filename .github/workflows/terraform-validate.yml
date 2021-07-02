@@ -1,0 +1,13 @@
+name: Terraform-validate
+on: [push]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: Validate terraform
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: terraform validate
+        uses: dflook/terraform-validate@v1
+        with:
+          path: ./final_exam/terraform
