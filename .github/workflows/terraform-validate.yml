@@ -1,7 +1,7 @@
 name: Terraform-validate
-on: [push]
+on: [push, pull_request]
 jobs:
-  validate:
+  Terraform-validate:
     runs-on: ubuntu-latest
     name: Validate terraform
     steps:

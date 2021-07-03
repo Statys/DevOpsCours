@@ -1,7 +1,7 @@
 name: GitHub Actions DevOpsCours
-on: [push]
+on: [push, pull_request]
 jobs:
-  DevOpsCourse-first-job:
+  GitHub Actions DevOpsCours:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
