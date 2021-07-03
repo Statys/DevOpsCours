@@ -45,3 +45,4 @@
         state: started
     - name: Run a nginx in docker container
       script: /home/statys/git_projects/DevOpsCours/final_exam/ansible/run_docker_nginx.sh
+
