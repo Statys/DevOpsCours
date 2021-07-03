@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "= 3.27"
+      version = "~> 3.27"
     }
   }
   required_version = ">= 0.12.31"
@@ -15,10 +15,10 @@ provider "aws" {
 
 resource "aws_key_pair" "dev_ops_pub_key" {
   key_name   = "dev_ops_pub_key"
-  #public_key = file("/home/statys/.ssh/id_rsa.pub")
   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDFt6LhKZPEIxwSY+gizywj/dnmGtJU9sI1QgsCvI77YeDcof52/A0RepgXMR5s4wLVGuXUxv0fV6IiRQYEhl7dHXjmH0WJ2bLr3LI3TVmTVf5xYUrqlnoiAumb6rrisXyy3mSQxM4rZHziICeirnVyUtsKK5ip9v/vUaa1NmWtj1azU3Ar9Y4tDZZT6v0XVpFOFj3XVAUriwVJGwuzK/nJ9rAhddqmkbUn8hU1KyrqX+tJ2Gzt03MVE/KugIgE7gAAxMTzZ+DAzlwi9DzyqMDotog3KlQN8LIe/FlCNeT6PQydxG6JtcEc2NvaArOpGdLmRXV1nbN1oCtqee49nqvTz2ahhyCLUcTyDvMNku9nz0AVABbIQmovHMh3a2rwiaVt6LL+zKEx3XjLE1fp4vakaCPyG7bgKqtcVT7o2hZWZ5WsvXnIxzBcMacku0hhWN/jQgdCQKQWMRjR5BMYf4vQVkBJGM52PsShLAQKS5I7YTIIIEX+vPmO8LR3vM5VSFE= statys@DESKTOP-TTUINVV"
+  #public_key = file("/home/statys/.ssh/id_rsa.pub")
 }
-1
+
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "2.21.0"
