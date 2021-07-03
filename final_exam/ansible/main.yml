@@ -23,12 +23,14 @@
         dest: /nginx_data/www/index.html
         owner: ubuntu
         group: ubuntu
+        mode: 0644
     - name: Copy nginx config
       copy:
         src: nginx.config
         dest: /nginx_data/config/default.conf
         owner: ubuntu
         group: ubuntu
+        mode: 0644
     - name: apt update
       apt:
         upgrade: yes
