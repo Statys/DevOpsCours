@@ -13,14 +13,20 @@
       file:
         path: /nginx_data/config
         state: directory
+        owner: ubuntu
+        group: ubuntu
     - name: Create a file index.html
       copy:
         content: DevOps Course 2021 Vovk2
         dest: /nginx_data/www/index.html
+        owner: ubuntu
+        group: ubuntu
     - name: Copy nginx config
       copy:
         src: nginx.config
         dest: /nginx_data/config/default.conf
+        owner: ubuntu
+        group: ubuntu
     - name: apt update
       apt:
         upgrade: yes
