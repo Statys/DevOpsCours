@@ -1,14 +1,7 @@
 local_changes/*
 lessons/terraform/*
 *.hcl
-*.tfstate
-.terraform/*
-final_exam/terraform/.terraform/modules/modules.json
-final_exam/terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/3.47.0/linux_amd64/terraform-provider-aws_v3.47.0_x5
+*.tfstate*
+*/.terraform/*
 lessons/terraform_vpc/.terraform/modules/modules.json
 lessons/terraform_vpc/.terraform/providers/registry.terraform.io/hashicorp/aws/3.47.0/linux_amd64/terraform-provider-aws_v3.47.0_x5
-lessons/terraform_vpc/terraform.tfstate.backup
-final_exam/terraform/terraform.tfstate
-final_exam/terraform/.terraform.tfstate.lock.info
-final_exam/terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/3.48.0/linux_amd64/terraform-provider-aws_v3.48.0_x5
-final_exam/terraform/terraform.tfstate
