@@ -7,7 +7,8 @@
       file:
         path: /nginx_data/www
         state: directory
-        mode: '0644'
+        owner: ubuntu
+        group: ubuntu
     - name: Create nginx data config folder
       file:
         path: /nginx_data/config
