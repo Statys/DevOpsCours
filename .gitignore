@@ -2,3 +2,4 @@ local_changes/*
 *.hcl
 *.tf*
 **/.terraform
+final_exam/ansible/hosts
