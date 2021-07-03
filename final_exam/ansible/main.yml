@@ -3,12 +3,13 @@
   become: true
   hosts: aws_servers
   tasks:
-    - name: "Create nginx data folder"
+    - name: Create nginx data folder
       file:
         path: /nginx_data/www
         state: directory
+        mode: '0644'
     - name: Create nginx data config folder
-      file: 
+      file:
         path: /nginx_data/config
         state: directory
     - name: Create a file index.html
@@ -33,4 +34,3 @@
         state: started
     - name: Run a nginx in docker container
       script: /home/statys/git_projects/DevOpsCours/final_exam/ansible/run_docker_nginx.sh
-    
