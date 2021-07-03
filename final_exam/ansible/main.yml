@@ -9,12 +9,14 @@
         state: directory
         owner: ubuntu
         group: ubuntu
+        mode: 0644
     - name: Create nginx data config folder
       file:
         path: /nginx_data/config
         state: directory
         owner: ubuntu
         group: ubuntu
+        mode: 0644
     - name: Create a file index.html
       copy:
         content: DevOps Course 2021 Vovk2
