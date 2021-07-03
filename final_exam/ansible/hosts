@@ -1,2 +1,2 @@
 [aws_servers]
-aws_server ansible_host=18.134.249.44 ansible_user=ubuntu ansible_port=22 ansible_connection=ssh ansible_ssh_private_key_file=/home/statys/.ssh/id_rsa
+aws_server ansible_host=3.8.152.9 ansible_user=ubuntu ansible_port=22 ansible_connection=ssh ansible_ssh_private_key_file=/home/statys/.ssh/id_rsa
