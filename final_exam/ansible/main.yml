@@ -3,11 +3,34 @@
   become: true
   hosts: aws_servers
   tasks:
-  - name: Get uptime information
-    ansible.builtin.shell: /usr/bin/uptime
-    register: result
-
-  - name: Print return information from the previous task
-    ansible.builtin.debug:
-      var: result
-      verbosity: 2
+    - name: "Create nginx data folder"
+      file:
+        path: /nginx_data/www
+        state: directory
+    - name: Create nginx data config folder
+      file: 
+        path: /nginx_data/config
+        state: directory
+    - name: Create a file index.html
+      copy:
+        content: DevOps Course 2021 Vovk2
+        dest: /nginx_data/www/index.html
+    - name: Copy nginx config
+      copy:
+        src: nginx.config
+        dest: /nginx_data/config/default.conf
+    - name: apt update
+      apt:
+        upgrade: yes
+        update_cache: yes
+    - name: Install docker
+      apt:
+        name: docker.io
+        state: present
+    - name: Start service docker
+      service:
+        name: docker
+        state: started
+    - name: Run a nginx in docker container
+      script: /home/statys/git_projects/DevOpsCours/final_exam/ansible/run_docker_nginx.sh
+    
